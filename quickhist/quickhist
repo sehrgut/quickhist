@@ -24,7 +24,7 @@
 
 
 import sys
-from numpy import array,histogram,percentile
+from numpy import amin,amax,mean,std,array,histogram,percentile
 import argparse
 from math import floor
 
@@ -103,6 +103,10 @@ def main():
     print ('\ncount      :',len(input_list))
     for perc in [25,50,75]:
         print ("{0}th perc. :".format(perc), percentile(input_list,perc))
+    print ("stdev      :", std(input_list))
+    print ("mean       :", mean(input_list))
+    print ("min        :", amin(input_list))
+    print ("max        :", amax(input_list))
     
 
 if __name__ == '__main__':
