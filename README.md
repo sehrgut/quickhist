@@ -1,6 +1,14 @@
 quickhist
 =========
 
+This fork is python3 compatible. I built it to visually check changes to an RNG implementation, so it's not very multi-purpose, but it has a couple features that
+I might work into PRs for the original:
+
+- aggregate stats: besides percentiles, it's nice to see the mean, min, max, and stdev. I needed to check empirically if out-of-range values were being generated, and that the mean and stdev were near heuristic predictions.
+- outlier detection: Assuming a symmetrical unimodal distribution, detects outliers more that 5% out of the expected range based solely on their neighbour in the central direction. There's real math that could be done here instead, but I was just trying to visually locate quantization errors in my math.
+
+-----
+
 **NOTE:** requires `numpy`
 
 
